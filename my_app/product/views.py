@@ -5,6 +5,14 @@ from my_app.product.models import PRODUCTS
 
 product_blueprint = Blueprint('product', __name__)
 
+
+@product_blueprint.context_processor
+def some_processor():
+    def full_name(product):
+        return '{0} / {1}'.format(product['category'], product['name'])
+    return {'full_name': full_name}
+
+
 @product_blueprint.route('/')
 @product_blueprint.route('/home')
 def home():
