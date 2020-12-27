@@ -1,4 +1,4 @@
-from werkzeug import abort
+from flask import abort
 from flask import render_template
 from flask import Blueprint
 from my_app.product.models import PRODUCTS
