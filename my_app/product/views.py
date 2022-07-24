@@ -1,3 +1,4 @@
+from datetime import datetime
 from werkzeug.exceptions import abort
 from flask import render_template
 from flask import Blueprint
@@ -16,7 +17,7 @@ def some_processor():
 @product_blueprint.route('/')
 @product_blueprint.route('/home')
 def home():
-    return render_template('home.html', products=PRODUCTS)
+    return render_template('home.html', products=PRODUCTS, timestamp=datetime.now())
 
 @product_blueprint.route('/product/<key>')
 def product(key):
