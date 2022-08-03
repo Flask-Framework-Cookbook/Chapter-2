@@ -2,9 +2,8 @@
 
 {% block container %}
   <div class="top-pad">
-    <h1>{{ product['name'] }}
-      <small>{{ product['category'] }}</small>
-    </h1>
-    <h3>$ {{ product['price'] }}</h3>
+    <h1>{{ product['name'] }}</h1>
+    <h3><small>{{ product['category'] }}</small></h3>
+    <h5>$ {{ product['price'] }}</h5>
   </div>
 {% endblock %}
